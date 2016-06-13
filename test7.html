@@ -1,0 +1,30 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title></title>
+</head>
+
+<body>
+<div style="top:0px; left: 0px; width:100%; height: 100%; position:absolute">
+                           <!--Это поверх картинки. Здесь контент страницы.-->
+</div>
+         <img width="100%" height="100%" src="bg.jpg"/>
+<img src="point.png" name="myimg" id="myimg" style="position:absolute; top:10; left:20 ">
+<script type="text/javascript">
+function mentmove(xid,yexpr,xexpr,ztime){
+	if (!xid) return null
+	if(!yexpr) yexpr="x"
+	if(!xexpr) xexpr="x"
+	if(!ztime) ztime=1000
+	x=1
+	setInterval("move('"+xid +"', '"+yexpr+"', '"+xexpr+"')",ztime)
+}
+function move(xid,yexpr,xexpr){
+	x++
+	document.all[xid].style.top=eval(yexpr)
+	document.all[xid].style.left=eval(xexpr)
+}
+	mentmove("myimg", 0, 200,3)
+</script>
+</body>
+</html>
